@@ -19,14 +19,14 @@ button.addEventListener('click',function(){
     .then(response => response.json())
     .then(data => {
         var cityValue = data['name'];
-        var tempValue = data['main']['humidity'];
+        var tempValue = data['main']['temp'];
         var descValue = data['weather'][0]['description'];
         var windValue = data['wind']['speed'];
         var humidityValue = data['main']['humidity'];
 
-        city.innerHTML = 'Weather in ' + cityValue;
-        temp.innerHTML = tempValue + '°F';
-        desc.innerHTML = descValue;
+        city.innerHTML = 'Weather in: ' + cityValue;
+        desc.innerHTML = 'Currently: ' + descValue;
+        temp.innerHTML = 'Temperature: ' + tempValue + '°F';
         humidity.innerHTML = 'Humidity: ' + humidityValue + '%';
         wind.innerHTML = 'Wind: ' + windValue + 'mp/h';
     })
